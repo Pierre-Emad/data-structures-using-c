@@ -1,0 +1,1 @@
+gcc main.c STACK.c STACK_ArrayBased.h STD_TYPES.h -o stack.exe
