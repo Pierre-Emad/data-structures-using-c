@@ -1,1 +1,1 @@
-# data-structures-using-c
+Some data structures implementations using C.
