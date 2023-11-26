@@ -59,7 +59,7 @@ STACK_DYNAMIC_t* stack_dynamic_free(STACK_DYNAMIC_t *stack, stack_status_t *ret_
         #ifdef STACK_DEBUG_MODE
         printf("NULL pointer was passed to function\n");
         #endif
-        ret_ptr = stack; // return stack pointer if not freed
+        ret_ptr = stack; // return original stack pointer if not freed
         *ret_status = STACK_NULL_POINTER;
     }
     else
@@ -200,11 +200,6 @@ stack_status_t stack_dynamic_print(const STACK_DYNAMIC_t *stack)
         {
             uint32_t it = 0;
             printf("Stack elements are: ");
-            // for (it = 0; it <= stack->STACK_DYNAMIC_top; it++)
-            // {
-            //     printf("%i ", stack->STACK_DYNAMIC_array[it]);
-            // }
-            
             for (it = stack->STACK_DYNAMIC_top; it > 0; it--)
             {
                 printf("%i ", stack->STACK_DYNAMIC_array[it]);
