@@ -1,0 +1,1 @@
+gcc main.c STACK_DYNAMIC.c STACK_DYNAMIC.h STD_TYPES.h -o stack.exe
