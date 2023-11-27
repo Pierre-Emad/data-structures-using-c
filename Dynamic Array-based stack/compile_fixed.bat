@@ -1,0 +1,1 @@
+gcc main.c STACK_FIXED.c STACK_FIXED.h STD_TYPES.h -o stack.exe
