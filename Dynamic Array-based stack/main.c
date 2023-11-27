@@ -3,8 +3,11 @@
   * @author	Pierre Emad
   * @brief	showcasing of different stack implementations
   */
+
 #include <stdio.h>
 #include <stdlib.h>
+
+/* don't include both FIXED and DYNAMIC header files together */
 #include "STACK_DYNAMIC.h"
 
 int main()
