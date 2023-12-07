@@ -1,0 +1,1 @@
+gcc main.c QUEUE.c QUEUE.h -o queue.exe
