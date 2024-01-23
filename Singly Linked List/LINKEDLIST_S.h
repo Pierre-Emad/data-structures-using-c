@@ -27,39 +27,60 @@ typedef enum
     LINKEDLIST_NULL_POINTER
 } LINKEDL_STATUS_t;
 
+
 /**
   * @brief insert a node at the beginning of the linked list
   * @param linked_list_head pointer to the head of the list
   * @param data data to be inserted
-  * @retval void
+  * @retval function status
   */
-void linkedlist_insertAtStart(node **linked_list_head, uint32_t data);
+LINKEDL_STATUS_t linkedlist_insertAtStart(node **linked_list_head, uint32_t data);
+
 /**
   * @brief insert a node at the end of the linked list
   * @param linked_list_head pointer to the head of the list
   * @param data data to be inserted
-  * @retval void 
+  * @retval function status
   */
-void linkedlist_insertAtEnd(node **linked_list_head, uint32_t data);
+LINKEDL_STATUS_t linkedlist_insertAtEnd(node **linked_list_head, uint32_t data);
+
 /**
   * @brief insert a node at a certain position
   * @param linked_list_head the head of the list
   * @param data data to be inserted
   * @param insertPosition position of the new node
-  * @retval void
+  * @retval function status
   */
-void linkedlist_insertAt(node *linked_list_head, uint32_t data, uint16_t insertPosition);
+LINKEDL_STATUS_t linkedlist_insertAt(node *linked_list_head, uint32_t data, uint16_t insertPosition);
+
 /**
-  * @brief print the contents of the linked list
-  * @param linked_list_head the head of the list
-  * @retval void
+  * @brief delete the node at the start of the list
+  * @param linked_list_head a pointer to the head of the list
+  * @retval function status
   */
-void linkedlist_print(node *linked_list_head);
+LINKEDL_STATUS_t linkedlist_deleteAtStart(node **linked_list_head);
+
+/**
+  * @brief deletes the node at a certain position
+  * @param linked_list_head the head of the list
+  * @param deletePosition position of the node to be deleted
+  * @retval function status
+  */
+LINKEDL_STATUS_t linkedlist_deleteAt(node *linked_list_head, uint16_t deletePosition);
+
+/**
+  * @brief print the contents of the list
+  * @param linked_list_head head of the list
+  * @retval function status
+  */
+LINKEDL_STATUS_t linkedlist_print(node *linked_list_head);
+
 /**
   * @brief get the length of the given linked list
   * @param linked_list_head the head of the list
+  * @param status pointer to status variable (pass NULL if not needed)
   * @retval the length of the linked list
   */
-uint16_t linkedlist_getLength(node *linked_list_head);
+uint16_t linkedlist_getLength(node *linked_list_head, LINKEDL_STATUS_t *status);
 
 #endif
