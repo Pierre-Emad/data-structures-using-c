@@ -13,15 +13,37 @@ int main()
     node *single_list = NULL;
     linkedlist_insertAtStart(&single_list, 4);
     linkedlist_insertAtStart(&single_list, 5);
+
+    linkedlist_print(single_list);
+    printf("The size of the list is %i\n", linkedlist_getLength(single_list, NULL));
+
     linkedlist_insertAtEnd(&single_list, 7);
     linkedlist_insertAtEnd(&single_list, 1);
     linkedlist_insertAtEnd(&single_list, 3);
-    linkedlist_insertAt(single_list, 9, 3);
-    linkedlist_insertAt(single_list, 40, 1);
-    linkedlist_insertAt(single_list, 40, 2);
-    linkedlist_insertAtStart(&single_list, 40);
 
     linkedlist_print(single_list);
-    printf("The size of the list is %i\n", linkedlist_getLength(single_list));
+    printf("The size of the list is %i\n", linkedlist_getLength(single_list, NULL));
+
+    linkedlist_insertAt(single_list, 9, 3);
+    linkedlist_insertAt(single_list, 40, 1); // should have no effect
+    linkedlist_insertAt(single_list, 40, 2);
+
+    linkedlist_print(single_list);
+    printf("The size of the list is %i\n", linkedlist_getLength(single_list, NULL));
+
+    linkedlist_deleteAtStart(&single_list);
+    linkedlist_deleteAtStart(&single_list);
+    linkedlist_deleteAtStart(&single_list);
+
+    linkedlist_print(single_list);
+    printf("The size of the list is %i\n", linkedlist_getLength(single_list, NULL));
+
+    linkedlist_deleteAt(single_list, 2);
+    linkedlist_deleteAt(single_list, 2);
+    linkedlist_deleteAt(single_list, 6); // should have no effect
+
+    linkedlist_print(single_list);
+    printf("The size of the list is %i\n", linkedlist_getLength(single_list, NULL));
+    
     return 0;
 }
