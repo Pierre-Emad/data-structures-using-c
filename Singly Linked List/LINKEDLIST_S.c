@@ -184,6 +184,32 @@ LINKEDL_STATUS_t linkedlist_deleteAt(node *linked_list_head, uint16_t deletePosi
     return ret_status;
 }
 
+LINKEDL_STATUS_t linkedlist_deleteList(node **linked_list_head)
+{
+    LINKEDL_STATUS_t ret_status = LINKEDLIST_NOK;
+    node *tempHead = NULL, *freeNode = NULL;
+    
+    if (*linked_list_head == NULL)
+    {
+        ret_status = LINKEDLIST_EMPTY;
+        #ifdef LINKEDLIST_DEBUG_MODE
+        printf("Linked list is either empty or not created, cannot delete list\n");
+        #endif
+    }
+    else
+    {
+        tempHead = *linked_list_head;
+        while (tempHead != NULL)
+        {
+            freeNode = tempHead;
+            tempHead = tempHead->LINKEDLIST_next_node;
+            free(freeNode);
+        }
+        ret_status = LINKEDLIST_OK;
+    }
+    return ret_status;
+}
+
 uint16_t linkedlist_getLength(node *linked_list_head, LINKEDL_STATUS_t *status)
 {
     node *head = linked_list_head;
