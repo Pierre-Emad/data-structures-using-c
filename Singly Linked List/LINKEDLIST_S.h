@@ -69,6 +69,13 @@ LINKEDL_STATUS_t linkedlist_deleteAtStart(node **linked_list_head);
 LINKEDL_STATUS_t linkedlist_deleteAt(node *linked_list_head, uint16_t deletePosition);
 
 /**
+  * @brief deletes (frees) the entire list from memory
+  * @param linked_list_head a pointer to the head of the list
+  * @retval function status
+  */
+LINKEDL_STATUS_t linkedlist_deleteList(node **linked_list_head);
+
+/**
   * @brief print the contents of the list
   * @param linked_list_head head of the list
   * @retval function status
