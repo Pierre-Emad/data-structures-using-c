@@ -44,6 +44,8 @@ int main()
 
     linkedlist_print(single_list);
     printf("The size of the list is %i\n", linkedlist_getLength(single_list, NULL));
+
+    linkedlist_deleteList(&single_list);   
     
     return 0;
 }
